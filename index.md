@@ -4,4 +4,6 @@ I'm a Data Analyst learning Data Science/Machine Learning with potential applica
 Checkout my
 - [LinkedIn profile](https://www.linkedin.com/in/jknowak/),
 - [Twitter](https://twitter.com/jknowak)
-- more TBA
+
+Blog 
+- [Elo](/posts/elo)
