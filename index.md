@@ -6,4 +6,4 @@ Checkout my
 - [Twitter](https://twitter.com/jknowak)
 
 Blog 
-- [Elo](/posts/elo)
+- [Hello](/blog/hello)
