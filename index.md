@@ -6,4 +6,4 @@ Checkout my
 - [Twitter](https://twitter.com/jknowak)
 
 Blog 
-- [Hello](/blog/hello)
+- [Fun online games for smart people](/blog/games)
