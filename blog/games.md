@@ -17,11 +17,13 @@ Below is a list of online games that I've enjoyed and that have eaten away hours
 - ### NYT games
 	- [Connections](https://www.nytimes.com/games/connections) which I learned about thanks to Sofiane during ML4Good.
 	- [Strands](https://www.nytimes.com/games/strands), similar to *word search*, but you can connect letter more freely, you know how many words you're looking for, there's a theme, and you will use all the letters. Definitely easier than Connections.
+
 ## Trivia based
 - [Redactle](https://redactle.anybrowser.org/) is the one I think I spent the most time playing, to the point where me & my friends tried to guess the answer in under 20 or even under 10 guesses. My personal record is 1 guess when it was the ["heat"](https://en.wikipedia.org/wiki/Heat) article.
 - Any game from [Trainwreck Labs](https://trainwrecklabs.com/).
 - [Tradle](https://oec.world/en/games/tradle) (OEC trade data).
 - [Worldle](https://worldle.teuteuf.fr/) where you guess a country by its outline.
+
 ## Logical
 - [Nerdle](https://nerdlegame.com/). 
 - [Nikoli](https://nikoli.co.jp) games.
