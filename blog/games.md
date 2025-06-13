@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "Fun online games for smart people"
 date:   2024-08-04 12:07:25 +0000
 categories:
