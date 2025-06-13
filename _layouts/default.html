@@ -7,14 +7,32 @@
   <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-  <header>
-    <h1><a href="/">{{ site.title | default: "Home" }}</a></h1>
-  </header>
-  <main>
-    {{ content }}
-  </main>
-  <footer>
-    <p><a href="/feed.xml">RSS</a></p>
-  </footer>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>About me</h2>
+      <p>Hi! I'm Jakub</p>
+      <p>I'm a Data Analyst learning Data Science/Machine Learning with potential applications in high-impact areas as understood by Effective Altruism community.</p>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/jknowak/">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" class="icon">
+        </a>
+        <a href="https://twitter.com/jknowak">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" alt="Twitter" class="icon">
+        </a>
+        <a href="/feed.xml">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/rss.svg" alt="RSS" class="icon">
+        </a>
+      </div>
+    </aside>
+    <div class="content">
+      <header>
+        <h1><a href="/">{{ site.title | default: "Home" }}</a></h1>
+      </header>
+      <main>
+        {{ content }}
+      </main>
+      <footer></footer>
+    </div>
+  </div>
 </body>
 </html>
