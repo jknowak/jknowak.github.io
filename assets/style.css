@@ -1,5 +1,5 @@
 body {
-  background-color: #ffffff;
+  background-color: #f0f8ff;
   color: #000000;
   font-family: Arial, sans-serif;
   margin: 0;
@@ -7,7 +7,7 @@ body {
 }
 
 header {
-  background-color: #007acc;
+  background-color: #004c99;
   color: white;
   padding: 1rem;
 }
@@ -22,24 +22,10 @@ main {
 }
 
 footer {
-  background-color: #e6f0ff;
+  background-color: #cce0ff;
   color: #003366;
   padding: 1rem;
   text-align: center;
-}
-
-.container {
-  display: flex;
-}
-
-.sidebar {
-  width: 220px;
-  background-color: #f4f4f4;
-  padding: 1rem;
-}
-
-.content {
-  flex: 1;
 }
 
 .social a {
