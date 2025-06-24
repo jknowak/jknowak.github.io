@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: Jakub K. Nowak | @kubanetics | Homepage
 ---
 
 ### Hi! I'm Jakub!
