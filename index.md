@@ -3,10 +3,15 @@ layout: default
 title: Home
 ---
 
-### Hi! I'm Jakub
-I'm a Data Analyst learning Data Science/Machine Learning with potential applications in high-impact areas as understood by Effective Altruism community.
+### Hi! I'm Jakub!
 
-Checkout my
-- [LinkedIn profile](https://www.linkedin.com/in/jknowak/),
-- [Twitter](https://twitter.com/jknowak),
-- 🔖 [Substack](https://kubanetics.substack.com/about)
+#### *From insights to impact* 🚀
+
+I'm a product-oriented analyst, with generalist experience across design, finance, marketing and machine learning.
+
+I'm active in the [AI safety](https://www.aisafety.com) area, helping build [polish community working on it](http://aisafety.org.pl/), and in the [polish Effective Altruism community](https://efektywnyaltruizm.org/).
+I took the [Giving What We Can pledge](https://www.givingwhatwecan.org/pledge) committing to donate 10% of my income to highly effective charities. I'm doing that mostly through [Więcej Dobra](https://www.wiecejdobra.pl/), an *effective giving* platform that I helped set up.
+
+Checkout my [LinkedIn](https://www.linkedin.com/in/jknowak/), or [Substack](https://kubanetics.substack.com/about) or [X/Twitter](https://twitter.com/jknowak).
+
+
