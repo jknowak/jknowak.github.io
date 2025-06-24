@@ -1,6 +1,6 @@
 body {
-  background-color: #f0f8ff;
-  color: #000000;
+  background-color: #f8fafc;
+  color: #1e293b;
   font-family: "Helvetica", sans-serif;
   font-size: 12px;
   margin: 0;
@@ -11,17 +11,17 @@ body {
 }
 
 a {
-  color: #001f5c;
+  color: #22d3ee;
   text-decoration: none;
 }
 
 a:visited {
-  color: #000b3d;
+  color: #64748b;
   text-decoration: none;
 }
 
 header {
-  background-color: #004c99;
+  background-color: #1e3a8a;
   color: white;
   padding: 1rem;
   position: relative;
@@ -69,8 +69,8 @@ main {
 }
 
 footer {
-  background-color: #cce0ff;
-  color: #003366;
+  background-color: #64748b;
+  color: #1e293b;
   padding: 1rem;
   text-align: center;
 }
