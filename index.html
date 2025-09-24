@@ -8,42 +8,58 @@ title: Jakub K. Nowak | Homepage
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="/assets/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'poppins': ['Poppins', 'sans-serif']
+          },
+          colors: {
+            'hero-start': '#1e3a8a',
+            'hero-end': '#4b61a2',
+            'hero-text': '#22d3ee'
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-  <section class="hero">
-    <div class="container">
-      <h1>Hi, I’m Jakub!</h1>
-      <p class="subtitle">Let's use insights for impact 🚀</p>
+<body class="font-poppins text-slate-800 m-0 p-0">
+  <section class="min-h-screen flex items-center justify-center bg-gradient-to-b from-hero-start to-hero-end text-center text-hero-text">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-5xl font-semibold m-0">Hi, I'm Jakub!</h1>
+      <p class="mt-2 text-xl">Let's use insights for impact 🚀</p>
     </div>
   </section>
 
-  <section class="about">
-    <div class="container about-grid">
-      <div class="about-text">
-        <p>I'm a product-oriented analyst, with generalist experience across design, finance, marketing and machine learning.</p>
-        <p>I'm active in the <a href="https://www.aisafety.com">AI safety</a> area, <a href="http://aisafety.org.pl/">polish community working on it</a>, and the <a href="https://efektywnyaltruizm.org/">polish Effective Altruism community</a>.</p>
+  <section class="bg-slate-50 py-8">
+    <div class="max-w-3xl mx-auto px-4 grid gap-8 md:grid-cols-2 md:items-center">
+      <div class="text-base leading-relaxed">
+        <p class="mb-4">I'm a product-oriented analyst, with generalist experience across design, finance, marketing and machine learning.</p>
+        <p>I'm active in the <a href="https://www.aisafety.com" class="text-slate-600 hover:text-slate-800">AI safety</a> area, <a href="http://aisafety.org.pl/" class="text-slate-600 hover:text-slate-800">polish community working on it</a>, and the <a href="https://efektywnyaltruizm.org/" class="text-slate-600 hover:text-slate-800">polish Effective Altruism community</a>.</p>
       </div>
-      <div class="about-photo">
-        <img src="/assets/me.png" alt="Jakub Nowak profile photo">
+      <div class="flex justify-center md:justify-end">
+        <img src="/assets/me.png" alt="Jakub Nowak profile photo" class="w-48 h-48 rounded-full object-cover">
       </div>
     </div>
   </section>
 
-  <section class="pledge">
-    <div class="container">
-      <p>I took the <a href="https://www.givingwhatwecan.org/pledge"><strong>Giving What We Can pledge</strong></a>, committing to donate 10% of my income to highly effective charities. I'm doing that mostly through <a href="https://www.wiecejdobra.pl/"><strong>💙 Więcej Dobra</strong></a>, an <em>effective giving</em> platform that I helped set up.</p>
+  <section class="bg-slate-50 py-8 px-4 text-center">
+    <div class="max-w-3xl mx-auto">
+      <p>I took the <a href="https://www.givingwhatwecan.org/pledge" class="text-slate-600 hover:text-slate-800"><strong>Giving What We Can pledge</strong></a>, committing to donate 10% of my income to highly effective charities. I'm doing that mostly through <a href="https://www.wiecejdobra.pl/" class="text-slate-600 hover:text-slate-800"><strong>💙 Więcej Dobra</strong></a>, an <em>effective giving</em> platform that I helped set up.</p>
     </div>
   </section>
 
-  <section class="social-links">
-    <div class="container social-buttons">
-      <a class="btn" href="https://www.linkedin.com/in/jknowak/">LinkedIn</a>
-      <a class="btn" href="https://alignedproducts.substack.com/">Substack</a>
-      <a class="btn" href="https://twitter.com/kubanetics">X/Twitter</a>
+  <section class="bg-slate-50 py-8 px-4 text-center">
+    <div class="max-w-3xl mx-auto flex justify-center flex-wrap gap-4">
+      <a class="inline-block py-2 px-5 bg-blue-800 text-white rounded-full no-underline hover:bg-blue-700 transition-colors duration-300" href="https://www.linkedin.com/in/jknowak/">LinkedIn</a>
+      <a class="inline-block py-2 px-5 bg-blue-800 text-white rounded-full no-underline hover:bg-blue-700 transition-colors duration-300" href="https://alignedproducts.substack.com/">Substack</a>
+      <a class="inline-block py-2 px-5 bg-blue-800 text-white rounded-full no-underline hover:bg-blue-700 transition-colors duration-300" href="https://twitter.com/kubanetics">X/Twitter</a>
     </div>
   </section>
 </body>
