@@ -33,7 +33,7 @@ title: Jakub K. Nowak | Homepage
   <section class="min-h-screen flex items-center justify-center bg-gradient-to-b from-hero-start to-hero-end text-center text-hero-text">
     <div class="max-w-3xl mx-auto px-4">
       <h1 class="text-5xl font-semibold m-0">Hi, I'm Jakub!</h1>
-      <p class="mt-2 text-xl">Let's use insights for impact 🚀</p>
+      <p class="mt-2 text-xl">Let's use insights for impact <span id="rocket" class="inline-block cursor-pointer transition-transform hover:scale-110">🚀</span></p>
     </div>
   </section>
 
@@ -62,5 +62,152 @@ title: Jakub K. Nowak | Homepage
       <a class="inline-block py-2 px-5 bg-blue-800 text-white rounded-full no-underline hover:bg-blue-700 transition-colors duration-300" href="https://twitter.com/kubanetics">X/Twitter</a>
     </div>
   </section>
+
+  <style>
+    /* Hidden SVG for path definition */
+    .rocket-path-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .rocket-flying {
+      position: absolute !important;
+      z-index: 10;
+      pointer-events: none;
+      offset-path: path('M 0,0 L 10,-10 Q 50,-50 100,-30 Q 150,10 130,70 Q 90,130 30,150 Q -50,170 -130,150 Q -210,130 -250,70 Q -290,10 -270,-50 Q -230,-110 -170,-130 Q -90,-150 -10,-130 Q 90,-110 150,-70 Q 210,-10 190,70 Q 150,150 70,190 Q -30,230 -130,210 Q -230,190 -290,130 Q -350,50 -330,-30 Q -290,-110 -210,-150 Q -110,-190 -10,-170 Q 90,-150 170,-110 Q 250,-50 230,30 Q 190,110 110,150 Q 30,190 -50,170 Q -130,150 -190,110 Q -250,50 -270,-30 Q -310,-110 -270,-190 Q -230,-270 -170,-310 Q -90,-350 10,-330 Q 110,-310 190,-270 Q 270,-210 290,-130 Q 310,-50 270,30 Q 210,110 130,170 Q 50,230 -30,250 Q -110,270 -190,250 Q -270,230 -330,170 Q -390,110 -410,30 Q -430,-50 -390,-130 Q -350,-210 -290,-270 Q -210,-330 -130,-350 Q -30,-370 50,-350 Q 130,-330 210,-290 Q 290,-230 330,-150 Q 370,-70 350,10 Q 310,90 250,150 Q 170,210 90,230 Q 10,250 -70,230 Q -150,210 -230,170 Q -310,130 -370,70 Q -430,10 -450,-70 Q -470,-150 -430,-230 Q -390,-310 -330,-370 Q -250,-430 -170,-450 Q -70,-470 10,-450 Q 90,-430 170,-390 Q 250,-330 310,-250 Q 370,-170 390,-90 Q 410,-10 370,70 Q 330,150 270,210 Q 190,270 110,290 Q 30,310 -50,290 Q -130,270 -210,230 Q -290,190 -350,130 Q -410,70 -430,-10 Q -450,-90 -410,-170 Q -370,-250 -310,-310 Q -230,-370 -150,-390 Q -50,-410 30,-390 Q 110,-370 190,-330 Q 270,-270 330,-190 Q 390,-110 410,-30 Q 430,50 390,130 Q 350,210 290,270 Q 210,330 130,350 Q 50,370 -30,350 Q -110,330 -190,290 Q -270,250 -330,190 Q -390,130 -410,50 Q -430,-30 -390,-110 Q -350,-190 -290,-250 Q -210,-310 -130,-330 Q -30,-350 50,-330 Q 130,-310 210,-270 Q 290,-210 350,-130 Q 410,-50 430,30 Q 450,110 410,190 Q 370,270 310,330 Q 230,390 150,410 Q 70,430 -10,410 Q -90,390 -170,350 Q -250,310 -310,250 Q -370,190 -390,110 Q -410,30 -370,-50 Q -330,-130 -270,-190 Q -190,-250 -110,-270 Q -10,-290 70,-270 Q 150,-250 230,-210 Q 310,-150 370,-70 Q 430,10 450,90 Q 470,170 430,250 Q 390,330 330,390 Q 250,450 170,470 Q 90,490 10,470 Q -70,450 -150,410 Q -230,370 -290,310 Q -350,250 -370,170 Q -390,90 -350,10 Q -310,-70 -250,-130 Q -170,-190 -90,-210 Q 10,-230 90,-210 Q 170,-190 250,-150 Q 330,-90 390,-10 Q 450,70 470,150 Q 490,230 450,310 Q 410,390 350,450 Q 270,510 190,530 Q 110,550 30,530 Q -50,510 -130,470 Q -210,430 -270,370 Q -330,310 -350,230 Q -370,150 -330,70 Q -290,-10 -230,-70 Q -150,-130 -70,-150 Q 30,-170 110,-150 Q 190,-130 270,-90 Q 350,-30 410,50 Q 470,130 490,210 Q 510,290 470,370 Q 430,450 370,510 Q 290,570 210,590 Q 130,610 50,590 Q -30,570 -110,530 Q -190,490 -250,430 Q -310,370 -330,290 Q -350,210 -310,130 Q -270,50 -210,-10 Q -130,-70 -50,-90 Q 50,-110 130,-90 Q 210,-70 290,-30 Q 370,30 430,110 Q 490,190 510,270 Q 530,350 490,430 Q 450,510 390,570 Q 310,630 230,650 Q 150,670 70,650 Q -10,630 -90,590 Q -170,550 -230,490 Q -290,430 -310,350 Q -330,270 -290,190 Q -250,110 -190,50 Q -110,-10 -30,-30 Q 70,-50 150,-30 Q 230,-10 310,30 Q 390,90 450,170 Q 510,250 530,330 Q 550,410 510,490 Q 470,570 410,630 Q 330,690 250,710 Q 170,730 90,710');
+      offset-distance: 0%;
+      offset-rotate: auto 45deg;
+      animation: rocketFlight 30s ease-out forwards;
+    }
+
+    @keyframes rocketFlight {
+      0% {
+        offset-distance: 0%;
+        transform: scale(1);
+        opacity: 1;
+      }
+      80% {
+        offset-distance: 80%;
+        transform: scale(2);
+        opacity: 0.8;
+      }
+      100% {
+        offset-distance: 100%;
+        transform: scale(2.5);
+        opacity: 0;
+      }
+    }
+
+    .fire-trail {
+      position: absolute !important;
+      z-index: 9;
+      pointer-events: none;
+      offset-path: path('M 0,0 L 10,-10 Q 50,-50 100,-30 Q 150,10 130,70 Q 90,130 30,150 Q -50,170 -130,150 Q -210,130 -250,70 Q -290,10 -270,-50 Q -230,-110 -170,-130 Q -90,-150 -10,-130 Q 90,-110 150,-70 Q 210,-10 190,70 Q 150,150 70,190 Q -30,230 -130,210 Q -230,190 -290,130 Q -350,50 -330,-30 Q -290,-110 -210,-150 Q -110,-190 -10,-170 Q 90,-150 170,-110 Q 250,-50 230,30 Q 190,110 110,150 Q 30,190 -50,170 Q -130,150 -190,110 Q -250,50 -270,-30 Q -310,-110 -270,-190 Q -230,-270 -170,-310 Q -90,-350 10,-330 Q 110,-310 190,-270 Q 270,-210 290,-130 Q 310,-50 270,30 Q 210,110 130,170 Q 50,230 -30,250 Q -110,270 -190,250 Q -270,230 -330,170 Q -390,110 -410,30 Q -430,-50 -390,-130 Q -350,-210 -290,-270 Q -210,-330 -130,-350 Q -30,-370 50,-350 Q 130,-330 210,-290 Q 290,-230 330,-150 Q 370,-70 350,10 Q 310,90 250,150 Q 170,210 90,230 Q 10,250 -70,230 Q -150,210 -230,170 Q -310,130 -370,70 Q -430,10 -450,-70 Q -470,-150 -430,-230 Q -390,-310 -330,-370 Q -250,-430 -170,-450 Q -70,-470 10,-450 Q 90,-430 170,-390 Q 250,-330 310,-250 Q 370,-170 390,-90 Q 410,-10 370,70 Q 330,150 270,210 Q 190,270 110,290 Q 30,310 -50,290 Q -130,270 -210,230 Q -290,190 -350,130 Q -410,70 -430,-10 Q -450,-90 -410,-170 Q -370,-250 -310,-310 Q -230,-370 -150,-390 Q -50,-410 30,-390 Q 110,-370 190,-330 Q 270,-270 330,-190 Q 390,-110 410,-30 Q 430,50 390,130 Q 350,210 290,270 Q 210,330 130,350 Q 50,370 -30,350 Q -110,330 -190,290 Q -270,250 -330,190 Q -390,130 -410,50 Q -430,-30 -390,-110 Q -350,-190 -290,-250 Q -210,-310 -130,-330 Q -30,-350 50,-330 Q 130,-310 210,-270 Q 290,-210 350,-130 Q 410,-50 430,30 Q 450,110 410,190 Q 370,270 310,330 Q 230,390 150,410 Q 70,430 -10,410 Q -90,390 -170,350 Q -250,310 -310,250 Q -370,190 -390,110 Q -410,30 -370,-50 Q -330,-130 -270,-190 Q -190,-250 -110,-270 Q -10,-290 70,-270 Q 150,-250 230,-210 Q 310,-150 370,-70 Q 430,10 450,90 Q 470,170 430,250 Q 390,330 330,390 Q 250,450 170,470 Q 90,490 10,470 Q -70,450 -150,410 Q -230,370 -290,310 Q -350,250 -370,170 Q -390,90 -350,10 Q -310,-70 -250,-130 Q -170,-190 -90,-210 Q 10,-230 90,-210 Q 170,-190 250,-150 Q 330,-90 390,-10 Q 450,70 470,150 Q 490,230 450,310 Q 410,390 350,450 Q 270,510 190,530 Q 110,550 30,530 Q -50,510 -130,470 Q -210,430 -270,370 Q -330,310 -350,230 Q -370,150 -330,70 Q -290,-10 -230,-70 Q -150,-130 -70,-150 Q 30,-170 110,-150 Q 190,-130 270,-90 Q 350,-30 410,50 Q 470,130 490,210 Q 510,290 470,370 Q 430,450 370,510 Q 290,570 210,590 Q 130,610 50,590 Q -30,570 -110,530 Q -190,490 -250,430 Q -310,370 -330,290 Q -350,210 -310,130 Q -270,50 -210,-10 Q -130,-70 -50,-90 Q 50,-110 130,-90 Q 210,-70 290,-30 Q 370,30 430,110 Q 490,190 510,270 Q 530,350 490,430 Q 450,510 390,570 Q 310,630 230,650 Q 150,670 70,650 Q -10,630 -90,590 Q -170,550 -230,490 Q -290,430 -310,350 Q -330,270 -290,190 Q -250,110 -190,50 Q -110,-10 -30,-30 Q 70,-50 150,-30 Q 230,-10 310,30 Q 390,90 450,170 Q 510,250 530,330 Q 550,410 510,490 Q 470,570 410,630 Q 330,690 250,710 Q 170,730 90,710');
+      offset-distance: 0%;
+      offset-rotate: auto 45deg;
+      border-radius: 50%;
+      animation: fireTrail 30s ease-out forwards;
+    }
+
+    .fire1 {
+      width: 8px;
+      height: 8px;
+      background: radial-gradient(circle, #ff4500 0%, #ff8c00 50%, #ffa500 100%);
+      animation-delay: 0.05s;
+    }
+
+    .fire2 {
+      width: 6px;
+      height: 6px;
+      background: radial-gradient(circle, #ff6500 0%, #ffa500 50%, #ffb84d 100%);
+      animation-delay: 0.1s;
+    }
+
+    .fire3 {
+      width: 4px;
+      height: 4px;
+      background: radial-gradient(circle, #ff8500 0%, #ffb84d 50%, #ffd700 100%);
+      animation-delay: 0.15s;
+    }
+
+    @keyframes fireTrail {
+      0% {
+        offset-distance: 0%;
+        transform: scale(1);
+        opacity: 0.9;
+      }
+      80% {
+        offset-distance: 80%;
+        transform: scale(1.5);
+        opacity: 0.6;
+      }
+      100% {
+        offset-distance: 100%;
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const rocket = document.getElementById('rocket');
+
+      rocket.addEventListener('click', function() {
+        // Get the current position of the rocket
+        const rect = rocket.getBoundingClientRect();
+
+        // Create a clone for the animation
+        const rocketClone = rocket.cloneNode(true);
+        rocketClone.id = 'rocket-clone';
+        rocketClone.style.position = 'absolute';
+        rocketClone.style.left = rect.left + 'px';
+        rocketClone.style.top = rect.top + 'px';
+        rocketClone.style.zIndex = '10';
+
+        // Create fire trail elements
+        const fireElements = [];
+        for (let i = 1; i <= 3; i++) {
+          const fire = document.createElement('div');
+          fire.className = `fire-trail fire${i}`;
+          fire.style.position = 'absolute';
+          fire.style.left = rect.left + 'px';
+          fire.style.top = rect.top + 'px';
+          fireElements.push(fire);
+          document.body.appendChild(fire);
+        }
+
+        // Hide the original rocket
+        rocket.style.opacity = '0';
+
+        // Add the clone to the body
+        document.body.appendChild(rocketClone);
+
+        // Start the animation
+        setTimeout(() => {
+          rocketClone.classList.add('rocket-flying');
+          fireElements.forEach(fire => {
+            fire.classList.add('fire-trail');
+          });
+        }, 10);
+
+        // Clean up after animation
+        setTimeout(() => {
+          document.body.removeChild(rocketClone);
+          fireElements.forEach(fire => {
+            if (document.body.contains(fire)) {
+              document.body.removeChild(fire);
+            }
+          });
+          rocket.style.opacity = '1';
+        }, 30000);
+      });
+    });
+  </script>
 </body>
 </html>
