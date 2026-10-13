@@ -31,7 +31,8 @@ title: Jakub K. Nowak | Homepage
     body { background: var(--ground); color: var(--ink); font-family: "Zen Kaku Gothic New", system-ui, sans-serif; font-size: 16px; line-height: 26px; }
     .headline { font-family: "Archivo", "Helvetica Neue", Arial, sans-serif; letter-spacing: -0.01em; }
     .editorial { font-family: "Shippori Mincho", "Noto Serif", Georgia, serif; }
-    .masthead { font-size: 64px; line-height: 60px; font-weight: 800; }
+    .masthead { font-size: 40px; line-height: 42px; font-weight: 800; }
+    @media (min-width: 768px) { .masthead { font-size: 64px; line-height: 60px; } }
     .h2 { font-size: 28px; line-height: 30px; font-weight: 700; }
     .card-title { font-size: 20px; line-height: 24px; font-weight: 700; }
     .eyebrow { font-family: "Archivo", "Helvetica Neue", Arial, sans-serif; font-size: 11px; line-height: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--indigo); }
@@ -56,15 +57,21 @@ title: Jakub K. Nowak | Homepage
     .hue-sash { --hue: var(--sash); }
     .hue-straw { --hue: var(--straw); }
     .hue-tint { --hue: var(--indigo-tint); }
+    /* Rotating word in the hero */
+    .care-word { display: inline-block; color: #c7d6ff; font-weight: 600; transition: opacity 300ms, transform 300ms; }
+    .care-word.out { opacity: 0; transform: translateY(-0.3em); }
+    @media (prefers-reduced-motion: reduce) { .care-word { transition: none; } }
     .story:hover .card-title { text-decoration: underline; text-underline-offset: 3px; }
   </style>
 </head>
 <body class="m-0 p-0">
-  <section class="min-h-screen flex items-center justify-center text-center" style="background: var(--indigo-deep); color: #faf8f3;">
+  <section class="py-12 md:py-20 text-center" style="background: var(--indigo-deep); color: #faf8f3;">
     <div class="max-w-3xl mx-auto px-4">
-      <p class="eyebrow" style="color: #c7d6ff;">AI safety, effective giving, data</p>
-      <h1 class="headline masthead mt-2 mb-0">Hi, I'm Jakub!</h1>
-      <p class="editorial lede mt-4">Let's use insights for impact 🚀</p>
+      <h1 class="headline masthead m-0">Hi, I'm Jakub!</h1>
+      <p class="editorial lede mt-4">
+        <span class="sr-only">I care about agency, data, evidence, rationality, effective altruism, AI alignment, human flourishing, empowering people, growth, fairness, ethics, progress, memorable experiences, good design, networking and eventmaxxing.</span>
+        <span aria-hidden="true">I care about <span id="care-word" class="care-word">agency</span></span>
+      </p>
     </div>
   </section>
 
@@ -167,5 +174,20 @@ title: Jakub K. Nowak | Homepage
       </div>
     </section>
   </main>
+  <script>
+    (function () {
+      var words = ["agency", "data", "evidence", "rationality", "effective altruism", "AI alignment", "human flourishing", "empowering people", "growth", "fairness", "ethics", "progress", "memorable experiences", "good design", "networking", "eventmaxxing"];
+      var el = document.getElementById("care-word");
+      var i = 0;
+      setInterval(function () {
+        el.classList.add("out");
+        setTimeout(function () {
+          i = (i + 1) % words.length;
+          el.textContent = words[i];
+          el.classList.remove("out");
+        }, 300);
+      }, 2200);
+    })();
+  </script>
 </body>
 </html>
