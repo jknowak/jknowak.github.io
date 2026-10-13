@@ -5,6 +5,7 @@ title: Jakub K. Nowak | Homepage
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>document.documentElement.className += " js";</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
@@ -61,12 +62,45 @@ title: Jakub K. Nowak | Homepage
     .care-word { display: inline-block; color: #c7d6ff; font-weight: 600; transition: opacity 300ms, transform 300ms; }
     .care-word.out { opacity: 0; transform: translateY(-0.3em); }
     @media (prefers-reduced-motion: reduce) { .care-word { transition: none; } }
+    /* Cards: soft shadow at rest, lift and neon glow on hover */
+    :root { --card: #ffffff; --glow: 47, 107, 255; }
+    @media (prefers-color-scheme: dark) { :root { --card: #111d4a; --glow: 122, 162, 255; } }
+    .card { display: block; padding: 12px; background: var(--card); border-radius: 8px; border: 1px solid var(--hairline);
+      box-shadow: 0 1px 2px rgba(11, 42, 122, 0.08), 0 8px 24px -12px rgba(11, 42, 122, 0.35);
+      transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease; }
+    .card .tone { border-radius: 4px; }
+    .card:hover, .card:focus-visible { transform: translateY(-4px); border-color: rgba(var(--glow), 0.9);
+      box-shadow: 0 0 0 1px rgba(var(--glow), 0.6), 0 0 28px rgba(var(--glow), 0.45), 0 16px 36px -12px rgba(var(--glow), 0.55); }
+    .btn { border-radius: 6px; transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 0 20px rgba(var(--glow), 0.6); }
+    .btn-madder:hover { box-shadow: 0 0 20px rgba(176, 24, 43, 0.55); }
+    .photo { border-radius: 8px; box-shadow: 0 0 0 1px rgba(var(--glow), 0.5), 0 0 36px rgba(var(--glow), 0.35), 0 18px 40px -16px rgba(11, 42, 122, 0.6); }
+
+    /* Hero: slow drifting glow behind the title */
+    .hero { position: relative; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; inset: -40%;
+      background: radial-gradient(closest-side at 30% 40%, rgba(47, 107, 255, 0.55), transparent 70%),
+                  radial-gradient(closest-side at 75% 60%, rgba(122, 162, 255, 0.35), transparent 70%);
+      animation: drift 18s ease-in-out infinite alternate; }
+    @keyframes drift { from { transform: translate(-6%, -4%) rotate(0deg); } to { transform: translate(6%, 4%) rotate(12deg); } }
+
+    /* Fade sections and cards up as they scroll into view (only when JS runs) */
+    .js .reveal { opacity: 0; transform: translateY(16px); transition: opacity 600ms ease, transform 600ms ease, box-shadow 250ms ease, border-color 250ms ease; }
+    .js .reveal.in { opacity: 1; transform: none; }
+    .js .card.reveal.in:hover { transform: translateY(-4px); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero::before { animation: none; }
+      .card, .btn, .js .reveal { transition: none; }
+      .js .reveal { opacity: 1; transform: none; }
+      .card:hover, .btn:hover, .js .card.reveal.in:hover { transform: none; }
+    }
     .story:hover .card-title { text-decoration: underline; text-underline-offset: 3px; }
   </style>
 </head>
 <body class="m-0 p-0">
-  <section class="py-12 md:py-20 text-center" style="background: var(--indigo-deep); color: #faf8f3;">
-    <div class="max-w-3xl mx-auto px-4">
+  <section class="hero py-12 md:py-20" style="background: var(--indigo-deep); color: #faf8f3;">
+    <div class="relative max-w-5xl mx-auto px-4">
       <h1 class="headline masthead m-0">Hi, I'm Jakub!</h1>
       <p class="editorial lede mt-4">
         <span class="sr-only">I care about agency, data, evidence, rationality, effective altruism, AI alignment, human flourishing, empowering people, growth, fairness, ethics, progress, memorable experiences, good design, networking and eventmaxxing.</span>
@@ -76,14 +110,14 @@ title: Jakub K. Nowak | Homepage
   </section>
 
   <main class="max-w-5xl mx-auto px-4">
-    <section class="py-12 grid gap-8 md:grid-cols-12 md:items-center">
+    <section class="reveal py-12 grid gap-8 md:grid-cols-12 md:items-center">
       <div class="md:col-span-8">
-        <p class="editorial lede mb-4">I'm a product-oriented analyst, with generalist experience across design, finance, marketing and machine learning.</p>
+        <p class="editorial lede mb-4">I'm a generalist analyst, with experience across design, finance, marketing and machine learning.</p>
         <p class="mb-4">I'm active in the <a href="https://www.aisafety.com" class="link">AI safety</a> area, the <a href="https://aisafety.org.pl/" class="link">polish community and field-building org</a>, and the <a href="https://efektywnyaltruizm.org/" class="link">polish Effective Altruism community</a>.</p>
         <p>I took the <a href="https://www.givingwhatwecan.org/pledge" class="link"><strong>Giving What We Can pledge</strong></a>, committing to donate 10% of my income to highly effective charities. I'm doing that mostly through <a href="https://www.wiecejdobra.pl/" class="link"><strong>💙 Więcej Dobra</strong></a>, an <em>effective giving</em> platform that I helped set up.</p>
       </div>
       <div class="md:col-span-4 flex justify-center md:justify-end">
-        <img src="/assets/me.png" alt="Jakub Nowak profile photo" class="w-48 h-48 object-cover">
+        <img src="/assets/me.jpg" alt="Jakub Nowak profile photo" class="photo w-48 h-48 md:w-56 md:h-56 object-cover">
       </div>
     </section>
 
@@ -96,7 +130,7 @@ title: Jakub K. Nowak | Homepage
       {%- assign lead = posts[0] -%}
       {%- assign second = posts[1] -%}
       <div class="grid gap-6 md:grid-cols-12">
-        <a href="{{ lead.url }}" class="story block md:col-span-8 no-underline" style="color: inherit;">
+        <a href="{{ lead.url }}" class="story card reveal block md:col-span-8 no-underline" style="color: inherit;">
           <div class="tone hue-{{ lead.hue }} aspect-video">
             <img src="https://substackcdn.com/image/fetch/w_1200,c_limit,f_auto,q_auto:good,fl_progressive:steep/{{ lead.image }}" alt="" loading="lazy">
           </div>
@@ -107,7 +141,7 @@ title: Jakub K. Nowak | Homepage
         </a>
         {%- if second %}
         <div class="md:col-span-4 flex flex-col gap-6">
-          <a href="{{ second.url }}" class="story block no-underline" style="color: inherit;">
+          <a href="{{ second.url }}" class="story card reveal block no-underline" style="color: inherit;">
             <div class="tone hue-{{ second.hue }} aspect-video">
               <img src="https://substackcdn.com/image/fetch/w_600,c_limit,f_auto,q_auto:good,fl_progressive:steep/{{ second.image }}" alt="" loading="lazy">
             </div>
@@ -122,7 +156,7 @@ title: Jakub K. Nowak | Homepage
       {%- if posts.size > 2 %}
       <div class="grid gap-6 md:grid-cols-2 mt-8 pt-8 border-t hairline">
         {%- for post in posts offset: 2 %}
-        <a href="{{ post.url }}" class="story grid grid-cols-5 gap-4 no-underline" style="color: inherit;">
+        <a href="{{ post.url }}" class="story card reveal grid grid-cols-5 gap-4 no-underline" style="color: inherit;">
           <div class="tone hue-{{ post.hue }} aspect-video col-span-2">
             <img src="https://substackcdn.com/image/fetch/w_600,c_limit,f_auto,q_auto:good,fl_progressive:steep/{{ post.image }}" alt="" loading="lazy">
           </div>
@@ -144,17 +178,17 @@ title: Jakub K. Nowak | Homepage
     <section class="section-rule pt-4 pb-12">
       <h2 class="headline h2 mt-0 mb-6">Projects</h2>
       <div class="grid gap-6 md:grid-cols-3">
-        <a href="https://aisafety.org.pl/" class="story block p-5 no-underline" style="background: var(--surface); color: inherit;">
+        <a href="https://aisafety.org.pl/" class="story card reveal block p-5 no-underline" style="color: inherit;">
           <p class="eyebrow mb-1">AI safety</p>
           <h3 class="headline card-title m-0">AI Safety Poland</h3>
           <p class="excerpt mt-2 mb-0">Building Central &amp; Eastern Europe's AI safety talent pipeline.</p>
         </a>
-        <a href="https://www.warsawaisafety.day/" class="story block p-5 no-underline" style="background: var(--surface); color: inherit;">
+        <a href="https://www.warsawaisafety.day/" class="story card reveal block p-5 no-underline" style="color: inherit;">
           <p class="eyebrow mb-1">Conference</p>
           <h3 class="headline card-title m-0">Warsaw AI Safety Day</h3>
           <p class="excerpt mt-2 mb-0">Poland's first AI safety conference — 24 October 2026, University of Warsaw.</p>
         </a>
-        <a href="https://www.wiecejdobra.pl/" class="story block p-5 no-underline" style="background: var(--surface); color: inherit;">
+        <a href="https://www.wiecejdobra.pl/" class="story card reveal block p-5 no-underline" style="color: inherit;">
           <p class="eyebrow mb-1">Effective giving</p>
           <h3 class="headline card-title m-0">Więcej Dobra</h3>
           <p class="excerpt mt-2 mb-0">Effective giving platform — co-founded.</p>
@@ -187,6 +221,24 @@ title: Jakub K. Nowak | Homepage
           el.classList.remove("out");
         }, 300);
       }, 2200);
+    })();
+    (function () {
+      var items = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) {
+        items.forEach(function (el) { el.classList.add("in"); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var el = e.target;
+          el.classList.add("in");
+          io.unobserve(el);
+          // Drop the stagger delay once revealed so hover effects respond instantly.
+          setTimeout(function () { el.style.transitionDelay = ""; }, 800);
+        });
+      }, { threshold: 0.1 });
+      items.forEach(function (el, i) { el.style.transitionDelay = (i % 3) * 80 + "ms"; io.observe(el); });
     })();
   </script>
 </body>
