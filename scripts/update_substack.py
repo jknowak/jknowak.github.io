@@ -18,7 +18,12 @@ SKIP = {"coming-soon"}
 LIMIT = 4
 HUES = ["indigo", "sash", "straw", "tint"]
 
-req = urllib.request.Request(FEED, headers={"User-Agent": "jknowak.pl site updater"})
+# Substack rejects non-browser user agents from cloud IPs.
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0 Safari/537.36",
+    "Accept": "application/rss+xml, application/xml;q=0.9, */*;q=0.8",
+}
+req = urllib.request.Request(FEED, headers=HEADERS)
 root = ET.fromstring(urllib.request.urlopen(req, timeout=30).read())
 labels = json.loads(LABELS.read_text())
 
