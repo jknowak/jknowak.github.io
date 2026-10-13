@@ -8,82 +8,164 @@ title: Jakub K. Nowak | Homepage
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            'poppins': ['Poppins', 'sans-serif']
-          },
-          colors: {
-            'hero-start': '#1e3a8a',
-            'hero-end': '#4b61a2',
-            'hero-text': '#22d3ee'
-          }
-        }
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Shippori+Mincho:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Aizome tokens */
+    :root {
+      --ground: #faf8f3; --surface: #e6ecff; --ink: #111111; --ink-muted: #5a5750;
+      --rule: #111111; --hairline: #c9d3f0; --indigo: #1849c4; --indigo-deep: #0b2a7a;
+      --indigo-bright: #2f6bff; --indigo-tint: #c7d6ff; --on-indigo: #faf8f3;
+      --madder: #b0182b; --straw: #e3c35a; --hemp: #cfc6a8; --sash: #5b4a6b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ground: #0a1230; --surface: #111d4a; --ink: #f2ede3; --ink-muted: #a8a399;
+        --rule: #f2ede3; --hairline: #22336e; --indigo: #7aa2ff; --indigo-deep: #1c3fa8;
+        --indigo-bright: #4f86ff; --indigo-tint: #18286a; --on-indigo: #0a1230;
+        --madder: #ff6b78; --straw: #d9b84e; --hemp: #4a4636; --sash: #a18fb3;
       }
     }
-  </script>
+    body { background: var(--ground); color: var(--ink); font-family: "Zen Kaku Gothic New", system-ui, sans-serif; font-size: 16px; line-height: 26px; }
+    .headline { font-family: "Archivo", "Helvetica Neue", Arial, sans-serif; letter-spacing: -0.01em; }
+    .editorial { font-family: "Shippori Mincho", "Noto Serif", Georgia, serif; }
+    .masthead { font-size: 64px; line-height: 60px; font-weight: 800; }
+    .h2 { font-size: 28px; line-height: 30px; font-weight: 700; }
+    .card-title { font-size: 20px; line-height: 24px; font-weight: 700; }
+    .eyebrow { font-family: "Archivo", "Helvetica Neue", Arial, sans-serif; font-size: 11px; line-height: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--indigo); }
+    .lede { font-size: 20px; line-height: 30px; }
+    .excerpt { font-size: 14px; line-height: 21px; color: var(--ink-muted); }
+    .caption { font-size: 12px; line-height: 16px; color: var(--ink-muted); }
+    .section-rule { border-top: 1px solid var(--rule); }
+    .hairline { border-color: var(--hairline); }
+    .link { color: var(--indigo); text-decoration: underline; text-underline-offset: 3px; }
+    .link:hover { text-decoration-thickness: 2px; }
+    .btn { display: inline-block; padding: 8px 20px; background: var(--indigo); color: var(--on-indigo); font-weight: 700; text-decoration: none; }
+    .btn:hover { background: var(--indigo-bright); }
+    .btn-madder { background: var(--madder); }
+    .btn-madder:hover { background: var(--madder); opacity: 0.9; }
+    a:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; }
+
+    /* Duotone: greyscale photo multiplied over a palette hue */
+    .tone { background: var(--hue); overflow: hidden; }
+    .tone img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.1); mix-blend-mode: multiply; transition: opacity 200ms; }
+    a:hover .tone img { opacity: 0.85; }
+    .hue-indigo { --hue: var(--indigo-bright); }
+    .hue-sash { --hue: var(--sash); }
+    .hue-straw { --hue: var(--straw); }
+    .hue-tint { --hue: var(--indigo-tint); }
+    .story:hover .card-title { text-decoration: underline; text-underline-offset: 3px; }
+  </style>
 </head>
-<body class="font-poppins text-slate-800 m-0 p-0">
-  <section class="min-h-screen flex items-center justify-center bg-gradient-to-b from-hero-start to-hero-end text-center text-hero-text">
+<body class="m-0 p-0">
+  <section class="min-h-screen flex items-center justify-center text-center" style="background: var(--indigo-deep); color: #faf8f3;">
     <div class="max-w-3xl mx-auto px-4">
-      <h1 class="text-5xl font-semibold m-0">Hi, I'm Jakub!</h1>
-      <p class="mt-2 text-xl">Let's use insights for impact 🚀</p>
+      <p class="eyebrow" style="color: #c7d6ff;">AI safety, effective giving, data</p>
+      <h1 class="headline masthead mt-2 mb-0">Hi, I'm Jakub!</h1>
+      <p class="editorial lede mt-4">Let's use insights for impact 🚀</p>
     </div>
   </section>
 
-  <section class="bg-slate-50 py-8">
-    <div class="max-w-3xl mx-auto px-4 grid gap-8 md:grid-cols-2 md:items-center">
-      <div class="text-base leading-relaxed">
-        <p class="mb-4">I'm a product-oriented analyst, with generalist experience across design, finance, marketing and machine learning.</p>
-        <p>I'm active in the <a href="https://www.aisafety.com" class="text-slate-600 hover:text-slate-800">AI safety</a> area, <a href="http://aisafety.org.pl/" class="text-slate-600 hover:text-slate-800">polish community working on it</a>, and the <a href="https://efektywnyaltruizm.org/" class="text-slate-600 hover:text-slate-800">polish Effective Altruism community</a>.</p>
+  <main class="max-w-5xl mx-auto px-4">
+    <section class="py-12 grid gap-8 md:grid-cols-12 md:items-center">
+      <div class="md:col-span-8">
+        <p class="editorial lede mb-4">I'm a product-oriented analyst, with generalist experience across design, finance, marketing and machine learning.</p>
+        <p class="mb-4">I'm active in the <a href="https://www.aisafety.com" class="link">AI safety</a> area, the <a href="https://aisafety.org.pl/" class="link">polish community and field-building org</a>, and the <a href="https://efektywnyaltruizm.org/" class="link">polish Effective Altruism community</a>.</p>
+        <p>I took the <a href="https://www.givingwhatwecan.org/pledge" class="link"><strong>Giving What We Can pledge</strong></a>, committing to donate 10% of my income to highly effective charities. I'm doing that mostly through <a href="https://www.wiecejdobra.pl/" class="link"><strong>💙 Więcej Dobra</strong></a>, an <em>effective giving</em> platform that I helped set up.</p>
       </div>
-      <div class="flex justify-center md:justify-end">
-        <img src="/assets/me.png" alt="Jakub Nowak profile photo" class="w-48 h-48 rounded-full object-cover">
+      <div class="md:col-span-4 flex justify-center md:justify-end">
+        <img src="/assets/me.png" alt="Jakub Nowak profile photo" class="w-48 h-48 object-cover">
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="bg-slate-50 py-8 px-4 text-center">
-    <div class="max-w-3xl mx-auto">
-      <p>I took the <a href="https://www.givingwhatwecan.org/pledge" class="text-slate-600 hover:text-slate-800"><strong>Giving What We Can pledge</strong></a>, committing to donate 10% of my income to highly effective charities. I'm doing that mostly through <a href="https://www.wiecejdobra.pl/" class="text-slate-600 hover:text-slate-800"><strong>💙 Więcej Dobra</strong></a>, an <em>effective giving</em> platform that I helped set up.</p>
-    </div>
-  </section>
+    <section id="writing" class="section-rule pt-4 pb-12">
+      <div class="flex items-baseline justify-between gap-4 mb-6">
+        <h2 class="headline h2 m-0">Writing</h2>
+        <a href="https://epsilonaligned.substack.com/" class="link text-sm">Epsilon Aligned on Substack</a>
+      </div>
+      {%- assign posts = site.data.substack -%}
+      {%- assign lead = posts[0] -%}
+      {%- assign second = posts[1] -%}
+      <div class="grid gap-6 md:grid-cols-12">
+        <a href="{{ lead.url }}" class="story block md:col-span-8 no-underline" style="color: inherit;">
+          <div class="tone hue-{{ lead.hue }} aspect-video">
+            <img src="https://substackcdn.com/image/fetch/w_1200,c_limit,f_auto,q_auto:good,fl_progressive:steep/{{ lead.image }}" alt="" loading="lazy">
+          </div>
+          <p class="eyebrow mt-4 mb-1">{{ lead.label }}</p>
+          <h3 class="headline m-0" style="font-size: 32px; line-height: 34px; font-weight: 800;">{{ lead.title }}</h3>
+          <p class="excerpt mt-2 mb-1">{{ lead.subtitle }}</p>
+          <p class="caption">{{ lead.date | date: "%-d %b %Y" }}</p>
+        </a>
+        {%- if second %}
+        <div class="md:col-span-4 flex flex-col gap-6">
+          <a href="{{ second.url }}" class="story block no-underline" style="color: inherit;">
+            <div class="tone hue-{{ second.hue }} aspect-video">
+              <img src="https://substackcdn.com/image/fetch/w_600,c_limit,f_auto,q_auto:good,fl_progressive:steep/{{ second.image }}" alt="" loading="lazy">
+            </div>
+            <p class="eyebrow mt-4 mb-1">{{ second.label }}</p>
+            <h3 class="headline card-title m-0">{{ second.title }}</h3>
+            <p class="excerpt mt-2 mb-1">{{ second.subtitle }}</p>
+            <p class="caption">{{ second.date | date: "%-d %b %Y" }}</p>
+          </a>
+        </div>
+        {%- endif %}
+      </div>
+      {%- if posts.size > 2 %}
+      <div class="grid gap-6 md:grid-cols-2 mt-8 pt-8 border-t hairline">
+        {%- for post in posts offset: 2 %}
+        <a href="{{ post.url }}" class="story grid grid-cols-5 gap-4 no-underline" style="color: inherit;">
+          <div class="tone hue-{{ post.hue }} aspect-video col-span-2">
+            <img src="https://substackcdn.com/image/fetch/w_600,c_limit,f_auto,q_auto:good,fl_progressive:steep/{{ post.image }}" alt="" loading="lazy">
+          </div>
+          <div class="col-span-3">
+            <p class="eyebrow mb-1">{{ post.label }}</p>
+            <h3 class="headline card-title m-0">{{ post.title }}</h3>
+            <p class="excerpt mt-2 mb-1">{{ post.subtitle }}</p>
+            <p class="caption">{{ post.date | date: "%-d %b %Y" }}</p>
+          </div>
+        </a>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+      <div class="mt-8">
+        <a href="https://epsilonaligned.substack.com/subscribe" class="btn btn-madder">Subscribe</a>
+      </div>
+    </section>
 
-  <section class="bg-white py-12 px-4">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-2xl font-semibold text-blue-900 border-b border-slate-200 pb-2 mb-6">Projects</h2>
-      <div class="grid gap-4 md:grid-cols-3">
-        <a href="https://aisafety.org.pl/" class="block p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-200 no-underline">
-          <h3 class="font-semibold text-slate-800 mb-1">AI Safety Poland</h3>
-          <p class="text-sm text-slate-500">Building Central &amp; Eastern Europe's AI safety talent pipeline.</p>
+    <section class="section-rule pt-4 pb-12">
+      <h2 class="headline h2 mt-0 mb-6">Projects</h2>
+      <div class="grid gap-6 md:grid-cols-3">
+        <a href="https://aisafety.org.pl/" class="story block p-5 no-underline" style="background: var(--surface); color: inherit;">
+          <p class="eyebrow mb-1">AI safety</p>
+          <h3 class="headline card-title m-0">AI Safety Poland</h3>
+          <p class="excerpt mt-2 mb-0">Building Central &amp; Eastern Europe's AI safety talent pipeline.</p>
         </a>
-        <a href="https://futurykon.vercel.app/" class="block p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-200 no-underline">
-          <h3 class="font-semibold text-slate-800 mb-1">Futurykon</h3>
-          <p class="text-sm text-slate-500">Polish prediction market MVP — looking for test users.</p>
+        <a href="https://futurykon.vercel.app/" class="story block p-5 no-underline" style="background: var(--surface); color: inherit;">
+          <p class="eyebrow mb-1">Forecasting</p>
+          <h3 class="headline card-title m-0">Futurykon</h3>
+          <p class="excerpt mt-2 mb-0">Polish prediction market MVP — looking for test users.</p>
         </a>
-        <a href="https://www.wiecejdobra.pl/" class="block p-5 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-200 no-underline">
-          <h3 class="font-semibold text-slate-800 mb-1">Więcej Dobra</h3>
-          <p class="text-sm text-slate-500">Effective giving platform — co-founded.</p>
+        <a href="https://www.wiecejdobra.pl/" class="story block p-5 no-underline" style="background: var(--surface); color: inherit;">
+          <p class="eyebrow mb-1">Effective giving</p>
+          <h3 class="headline card-title m-0">Więcej Dobra</h3>
+          <p class="excerpt mt-2 mb-0">Effective giving platform — co-founded.</p>
         </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="links" class="bg-slate-50 py-8 px-4 text-center">
-    <div class="max-w-3xl mx-auto flex justify-center flex-wrap gap-4">
-      <a class="inline-block py-2 px-5 bg-blue-800 text-white rounded-full no-underline hover:bg-blue-700 transition-colors duration-300" href="/cv">CV</a>
-      <a class="inline-block py-2 px-5 bg-blue-800 text-white rounded-full no-underline hover:bg-blue-700 transition-colors duration-300" href="https://www.linkedin.com/in/jknowak/">LinkedIn</a>
-      <a class="inline-block py-2 px-5 bg-blue-800 text-white rounded-full no-underline hover:bg-blue-700 transition-colors duration-300" href="https://epsilonaligned.substack.com/">Substack</a>
-      <a class="inline-block py-2 px-5 bg-blue-800 text-white rounded-full no-underline hover:bg-blue-700 transition-colors duration-300" href="https://twitter.com/kubanetics">X/Twitter</a>
-      <a class="inline-block py-2 px-5 bg-blue-800 text-white rounded-full no-underline hover:bg-blue-700 transition-colors duration-300" href="https://cal.com/jknowak">Book a call</a>
-      <a class="inline-block py-2 px-5 bg-blue-800 text-white rounded-full no-underline hover:bg-blue-700 transition-colors duration-300" href="https://admonymous.co/kubuczka">Give feedback</a>
-    </div>
-  </section>
+    <section id="links" class="section-rule pt-4 pb-12">
+      <h2 class="headline h2 mt-0 mb-6">Links</h2>
+      <div class="flex flex-wrap gap-4">
+        <a class="btn" href="/cv">CV</a>
+        <a class="btn" href="https://www.linkedin.com/in/jknowak/">LinkedIn</a>
+        <a class="btn" href="https://epsilonaligned.substack.com/">Substack</a>
+        <a class="btn" href="https://twitter.com/kubanetics">X/Twitter</a>
+        <a class="btn" href="https://cal.com/jknowak">Book a call</a>
+        <a class="btn" href="https://admonymous.co/kubuczka">Give feedback</a>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
