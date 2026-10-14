@@ -69,8 +69,11 @@ title: Jakub K. Nowak | Homepage
     .intro .wrap { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 56px; align-items: center; padding-block: 72px 80px; }
     .intro h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(44px, 6.4vw, 80px); line-height: 1.02; letter-spacing: -0.025em; }
     .care { margin: 20px 0 0; font-family: var(--serif); font-size: clamp(24px, 2.6vw, 32px); line-height: 1.25; }
-    .care-word { display: inline-block; font-style: italic; color: var(--forest); transition: opacity 280ms ease, transform 280ms ease; }
-    .care-word.out { opacity: 0; transform: translateY(-0.25em); }
+    /* Rotating word: rolls up out of a clipped slot while the next rolls in from below. */
+    .care-slot { display: inline-block; overflow: hidden; vertical-align: bottom; transition: width 420ms cubic-bezier(.65, 0, .35, 1); }
+    .care-word { display: inline-block; white-space: nowrap; padding-right: 0.12em; font-style: italic; color: var(--forest); transition: transform 420ms cubic-bezier(.65, 0, .35, 1), opacity 420ms ease; }
+    .care-word.out { transform: translateY(-110%); opacity: 0; }
+    .care-word.below { transform: translateY(110%); opacity: 0; transition: none; }
     .intro-body { margin-top: 28px; max-width: 60ch; display: grid; gap: 14px; color: var(--ink); }
     .intro-body p { margin: 0; }
     .intro-body a { text-decoration-color: var(--rule); text-underline-offset: 4px; }
@@ -131,7 +134,7 @@ title: Jakub K. Nowak | Homepage
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .care-word, .tile .go, .pill { transition: none; }
+      .care-slot, .care-word, .tile .go, .pill { transition: none; }
       .tile:hover .go { transform: none; }
     }
     .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -156,7 +159,7 @@ title: Jakub K. Nowak | Homepage
         <h1>Hi, I'm Jakub!</h1>
         <p class="care">
           <span class="sr-only">I care about agency, data, evidence, rationality, effective altruism, AI alignment, human flourishing, empowering people, growth, fairness, ethics, progress, memorable experiences, good design, networking and eventmaxxing.</span>
-          <span aria-hidden="true">I care about <span id="care-word" class="care-word">agency</span></span>
+          <span aria-hidden="true">I care about <span class="care-slot"><span id="care-word" class="care-word">agency</span></span></span>
         </p>
         <div class="intro-body">
           <p>I'm a generalist analyst, with experience across design, finance, marketing and machine learning.</p>
@@ -253,15 +256,25 @@ title: Jakub K. Nowak | Homepage
     (function () {
       var words = ["agency", "data", "evidence", "rationality", "effective altruism", "AI alignment", "human flourishing", "empowering people", "growth", "fairness", "ethics", "progress", "memorable experiences", "good design", "networking", "eventmaxxing"];
       var el = document.getElementById("care-word");
+      var slot = el.parentNode;
+      var still = window.matchMedia("(prefers-reduced-motion: reduce)");
       var i = 0;
+      function fit() { slot.style.width = el.offsetWidth + "px"; }
+      fit();
+      document.fonts && document.fonts.ready.then(fit);
       setInterval(function () {
+        i = (i + 1) % words.length;
+        if (still.matches) { el.textContent = words[i]; fit(); return; }
         el.classList.add("out");
         setTimeout(function () {
-          i = (i + 1) % words.length;
-          el.textContent = words[i];
           el.classList.remove("out");
-        }, 280);
-      }, 2200);
+          el.classList.add("below");
+          el.textContent = words[i];
+          fit();
+          void el.offsetWidth;
+          el.classList.remove("below");
+        }, 420);
+      }, 2600);
     })();
   </script>
 </body>
