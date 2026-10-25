@@ -2,3 +2,4 @@ theme: jekyll-theme-tactile
 title: Jakub K. Nowak
 exclude:
   - scripts
+  - bravr/CLAUDE.md
