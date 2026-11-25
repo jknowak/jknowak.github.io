@@ -38,5 +38,25 @@
     "image": "https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F58a7e60d-381b-4598-a8db-bd70b840a8ac_2400x1260.jpeg",
     "label": "AI safety, Insurance",
     "hue": "indigo"
+  },
+  {
+    "slug": "exploiting-the-in-kind-donation-bias",
+    "title": "\"Exploiting\" the In-Kind Donation Bias",
+    "subtitle": "How we can turn feel-good gifts into impact-ready cash.",
+    "url": "https://epsilonaligned.substack.com/p/exploiting-the-in-kind-donation-bias",
+    "date": "2026-03-13",
+    "image": "https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F16b623d2-4cf6-418d-9c24-13b600c686b3_2400x1260.jpeg",
+    "label": "Effective giving",
+    "hue": "sash"
+  },
+  {
+    "slug": "lets-start-eventmaxxing",
+    "title": "Let's Start Eventmaxxing",
+    "subtitle": "Why Not Organize a PowerPoint Night?",
+    "url": "https://epsilonaligned.substack.com/p/lets-start-eventmaxxing",
+    "date": "2026-01-25",
+    "image": "https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5823ac5b-2a59-400d-8a78-3de257fc5c0a_2400x1260.jpeg",
+    "label": "Community",
+    "hue": "straw"
   }
 ]

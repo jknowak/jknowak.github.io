@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parent.parent
 LABELS = ROOT / "scripts" / "substack_labels.json"
 OUT = ROOT / "_data" / "substack.json"
 SKIP = {"coming-soon"}
-LIMIT = 4
+LIMIT = 6
 HUES = ["indigo", "sash", "straw", "tint"]
 
 # Substack rejects non-browser user agents from cloud IPs.
