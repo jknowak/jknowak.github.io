@@ -3,6 +3,7 @@
 Eyebrow labels and tint hues come from scripts/substack_labels.json, keyed by
 post slug. Posts missing from it get the fallback label and a cycled hue.
 """
+import html
 import json
 import re
 import urllib.request
@@ -42,8 +43,8 @@ for item in root.iter("item"):
     meta = labels.get(slug, {})
     posts.append({
         "slug": slug,
-        "title": item.findtext("title").strip(),
-        "subtitle": (item.findtext("description") or "").strip(),
+        "title": html.unescape(item.findtext("title").strip()),
+        "subtitle": html.unescape((item.findtext("description") or "").strip()),
         "url": url,
         "date": parsedate_to_datetime(item.findtext("pubDate")).date().isoformat(),
         "image": image,

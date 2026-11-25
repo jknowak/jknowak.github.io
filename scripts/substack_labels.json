@@ -1,4 +1,7 @@
 {
+  "separate-shoulds-and-cans": {"label": "AI safety, Policy", "hue": "tint"},
+  "education-should-be-a-last-resort": {"label": "Education", "hue": "sash"},
+  "creativity-is-not-magic": {"label": "AI, Creativity", "hue": "straw"},
   "theres-no-insurance-for-catastrophic": {"label": "AI safety, Insurance", "hue": "indigo"},
   "exploiting-the-in-kind-donation-bias": {"label": "Effective giving", "hue": "sash"},
   "lets-start-eventmaxxing": {"label": "Community", "hue": "straw"},

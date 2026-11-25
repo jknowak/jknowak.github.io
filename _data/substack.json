@@ -1,42 +1,42 @@
 [
   {
+    "slug": "separate-shoulds-and-cans",
+    "title": "Separate “Shoulds” and “Cans”",
+    "subtitle": "Let’s agree IF we should pause AI, before we dismiss the HOW",
+    "url": "https://epsilonaligned.substack.com/p/separate-shoulds-and-cans",
+    "date": "2026-11-23",
+    "image": "https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F25b934cb-f490-4db9-891e-51ed79a700ba_2400x1260.jpeg",
+    "label": "AI safety, Policy",
+    "hue": "tint"
+  },
+  {
+    "slug": "education-should-be-a-last-resort",
+    "title": "Education Should Be a Last Resort",
+    "subtitle": "Do not add more to the curriculum",
+    "url": "https://epsilonaligned.substack.com/p/education-should-be-a-last-resort",
+    "date": "2026-11-21",
+    "image": "https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0168abb4-c49c-4456-ba57-cf6b781d64b6_2400x1260.jpeg",
+    "label": "Education",
+    "hue": "sash"
+  },
+  {
+    "slug": "creativity-is-not-magic",
+    "title": "Creativity Is Not Magic",
+    "subtitle": "Two steps machines can perform",
+    "url": "https://epsilonaligned.substack.com/p/creativity-is-not-magic",
+    "date": "2026-11-16",
+    "image": "https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc97b734c-d9ac-42f1-a816-f7fafc3350d1_2400x1260.jpeg",
+    "label": "AI, Creativity",
+    "hue": "straw"
+  },
+  {
     "slug": "theres-no-insurance-for-catastrophic",
     "title": "There's no Insurance for Catastrophic AI Risk",
     "subtitle": "But the insurance industry can still help.",
     "url": "https://epsilonaligned.substack.com/p/theres-no-insurance-for-catastrophic",
     "date": "2026-09-14",
-    "image": "https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F06131303-dc6b-47f4-9b4a-fe883d020dd5_2528x1534.jpeg",
+    "image": "https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F58a7e60d-381b-4598-a8db-bd70b840a8ac_2400x1260.jpeg",
     "label": "AI safety, Insurance",
     "hue": "indigo"
-  },
-  {
-    "slug": "exploiting-the-in-kind-donation-bias",
-    "title": "\"Exploiting\" the In-Kind Donation Bias",
-    "subtitle": "How we can turn feel-good gifts into impact-ready cash.",
-    "url": "https://epsilonaligned.substack.com/p/exploiting-the-in-kind-donation-bias",
-    "date": "2026-03-13",
-    "image": "https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F34109392-aa04-419b-8f6e-7d3110c3cdc1_1920x1280.jpeg",
-    "label": "Effective giving",
-    "hue": "sash"
-  },
-  {
-    "slug": "lets-start-eventmaxxing",
-    "title": "Let's Start Eventmaxxing",
-    "subtitle": "Why Not Organize a PowerPoint Night?",
-    "url": "https://epsilonaligned.substack.com/p/lets-start-eventmaxxing",
-    "date": "2026-01-25",
-    "image": "https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F65cca49f-d10e-44fb-b9a5-38a22a7b7dc4_1264x848.png",
-    "label": "Community",
-    "hue": "straw"
-  },
-  {
-    "slug": "many-faces-of-problem-decomposition",
-    "title": "Many Faces Of Problem Decomposition",
-    "subtitle": "One Weird Trick Used Across Industries",
-    "url": "https://epsilonaligned.substack.com/p/many-faces-of-problem-decomposition",
-    "date": "2025-12-04",
-    "image": "https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F78288356-2434-4c37-8324-bf3a3451068e_656x504.png",
-    "label": "Rationality",
-    "hue": "tint"
   }
 ]
